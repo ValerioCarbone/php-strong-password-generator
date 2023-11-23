@@ -16,16 +16,19 @@
 </body>
 
 <?php
+session_start();
+
 include './funcionts.php';
 
 $pw_length = isset($_GET['pw_length']) ? $_GET['pw_length'] : null;
 
 
 if ($pw_length != null) {
-    $password = pw_generator($pw_length)
-?>
-    <p>Your password is:"<?php echo $password ?>" </p>
 
-<?php } ?>
+    $_SESSION['password'] = pw_generator($pw_length);
+
+    header('Location: ./password.php');
+}
+?>
 
 </html>
