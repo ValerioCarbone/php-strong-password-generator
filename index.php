@@ -18,7 +18,7 @@
 <?php
 session_start();
 
-include './funcionts.php';
+include './functions.php';
 
 $pw_length = isset($_GET['pw_length']) ? $_GET['pw_length'] : null;
 
